@@ -25,7 +25,7 @@ public class FeedService
              Document response=responsePromise.thenApply(WSResponse::asXml).toCompletableFuture().get();
              Node item=response.getFirstChild().getFirstChild().getChildNodes().item(10);
              feedResponse.title=item.getChildNodes().item(0).getFirstChild().getNodeValue();
-             //item(number)gives he node <title></tile> and not title value so we use getFirstChild() in this case there are no further children
+             //item(number)gives he node <title></tile> and not title value so we use getFirstChild() in this case there are no further children's
              feedResponse.pubDate=item.getChildNodes().item(3).getFirstChild().getNodeValue();
              feedResponse.description=item.getChildNodes().item(4).getFirstChild().getNodeValue();
 
