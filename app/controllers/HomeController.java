@@ -16,11 +16,18 @@ import views.html.login;
 import javax.inject.Inject;
 import java.util.Objects;
 
-public class HomeController extends Controller {
+public class HomeController extends Controller
+{
     public Result chat()
     {
         return ok(chat.render());
     }
+    public LegacyWebSocket<String> chatSocket()
+    {
+        //creates web socket connection,actor with default props and attaches web socket with actor
+        return WebSocket.withActor(MessageActor::props);
+    }
+
 
 
 }

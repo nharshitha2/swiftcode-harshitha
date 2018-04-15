@@ -56,7 +56,7 @@ public class MessageActor extends UntypedActor {
         else
         {
 
-            messageObject.text =  "No results found";
+            messageObject.text =  "No results found (not string)";
             messageObject.sender=Message.Sender.BOT;
             out.tell(mapper.writeValueAsString(messageObject), self());
 
